@@ -60,11 +60,12 @@ export const writeScript = (
 
   const prefixLines = Object.entries(packageJson.raycast).reduce<string[]>(
     (acc, [key, value]) => {
-      acc.push(`// @raycase.${key}: ${value}`)
+      acc.push(`// @raycast.${key} ${value}`)
       return acc
     },
     ['#!/usr/bin/env node'],
   )
+  prefixLines.push('') // add one extra blank line
 
   ensureDirectoryExists(commandsDir)
 
