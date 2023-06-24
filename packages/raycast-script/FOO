@@ -1,6 +1,0 @@
-"echo": {
-      "executor": "raycast-script:echo",
-      "options": {
-        "textToEcho": "Hello World"
-      }
-    }

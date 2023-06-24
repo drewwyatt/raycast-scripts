@@ -10,7 +10,7 @@ export default async function echoExecutor(
   options: EchoExecutorOptions,
   context: ExecutorContext,
 ): Promise<{ success: boolean }> {
-  console.info(`Executing "echo"...`)
+  console.info(`Executing "export-all"...`)
   console.info(`Options: ${JSON.stringify(options, null, 2)}`)
 
   const { stdout, stderr } = await promisify(exec)(`echo ${options.textToEcho}`)

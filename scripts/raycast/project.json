@@ -1,0 +1,40 @@
+{
+  "name": "raycast",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "scripts/raycast/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/scripts/raycast",
+        "main": "scripts/raycast/src/index.ts",
+        "tsConfig": "scripts/raycast/tsconfig.lib.json",
+        "assets": [
+          "scripts/raycast/*.md",
+          {
+            "input": "./scripts/raycast/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./scripts/raycast/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./scripts/raycast",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./scripts/raycast",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

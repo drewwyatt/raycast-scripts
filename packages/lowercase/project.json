@@ -10,6 +10,13 @@
         "tsConfig": "tsconfig.json",
         "main": "packages/lowercase/src/index.ts"
       }
+    },
+    "export": {
+      "executor": "raycast:export",
+      "dependsOn": ["build"],
+      "options": {
+        "textToEcho": "Hello World"
+      }
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "export": {
+      "implementation": "./src/executors/export/executor",
+      "schema": "./src/executors/export/schema.json",
+      "description": "Rename script files and add raycast metadata + shebang"
+    }
+  }
+}

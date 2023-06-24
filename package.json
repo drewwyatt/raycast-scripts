@@ -28,7 +28,8 @@
     "typescript": "^5.1.3"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "scripts/*"
   ],
   "dependencies": {
     "@nx/devkit": "16.4.0",
