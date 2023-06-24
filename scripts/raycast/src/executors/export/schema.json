@@ -5,9 +5,9 @@
   "description": "",
   "type": "object",
   "properties": {
-    "textToEcho": {
+    "command": {
       "type": "string",
-      "description": "Text To Echo"
+      "description": "command name"
     }
   },
   "required": []

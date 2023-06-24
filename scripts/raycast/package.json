@@ -2,5 +2,8 @@
   "name": "raycast",
   "version": "0.0.1",
   "type": "commonjs",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
 }

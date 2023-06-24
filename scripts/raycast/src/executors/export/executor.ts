@@ -1,22 +1,23 @@
 import type { ExecutorContext } from '@nx/devkit'
-import { exec } from 'child_process'
-import { promisify } from 'util'
+import { readScriptAndPackage, writeScript } from './utils'
 
-export interface EchoExecutorOptions {
-  textToEcho: string
+export type ExportExecutorOptions = {
+  command: string
 }
 
 export default async function echoExecutor(
-  options: EchoExecutorOptions,
+  options: ExportExecutorOptions,
   context: ExecutorContext,
 ): Promise<{ success: boolean }> {
-  console.info(`Executing "export-all"...`)
-  console.info(`Options: ${JSON.stringify(options, null, 2)}`)
+  let success = false
 
-  const { stdout, stderr } = await promisify(exec)(`echo ${options.textToEcho}`)
-  console.log(stdout)
-  console.error(stderr)
+  try {
+    const [script, packageJson] = await readScriptAndPackage(context, options.command)
+    writeScript(context, options.command, script, packageJson)
+    success = true
+  } catch (err) {
+    console.error(err)
+  }
 
-  const success = !stderr
   return { success }
 }

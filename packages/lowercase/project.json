@@ -15,7 +15,7 @@
       "executor": "raycast:export",
       "dependsOn": ["build"],
       "options": {
-        "textToEcho": "Hello World"
+        "command": "lowercase"
       }
     }
   }
