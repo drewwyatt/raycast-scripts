@@ -1,0 +1,12 @@
+{
+  "name": "lowercase",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "raycast": {},
+  "scripts": {
+    "build": "PACKAGE_DIR='lowercase' rollup -c ../../rollup.config.js"
+  },
+  "dependencies": {
+    "utils": "*"
+  }
+}

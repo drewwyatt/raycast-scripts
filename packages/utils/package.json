@@ -1,0 +1,11 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/utils/src/index.d.ts",
+  "scripts": {
+    "build": "OUT_FILE='packages/utils/dist/index.js' PACKAGE_DIR='utils' rollup -c ../../rollup.config.js && npm run typegen",
+    "typegen": "tsc"
+  }
+}
