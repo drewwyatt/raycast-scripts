@@ -1,0 +1,15 @@
+{
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "packages/utils/package.json",
+        "outputPath": "tmp/libs/utils",
+        "entryFile": "packages/utils/src/index.ts",
+        "tsConfig": "tsconfig.json",
+        "main": "packages/utils/src/index.ts"
+      }
+    }
+  }
+}

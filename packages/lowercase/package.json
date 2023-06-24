@@ -2,9 +2,13 @@
   "name": "lowercase",
   "version": "0.0.0",
   "main": "src/index.ts",
-  "raycast": {},
-  "scripts": {
-    "build": "PACKAGE_DIR='lowercase' rollup -c ../../rollup.config.js"
+  "raycast": {
+    "schemaVersion": 1,
+    "title": "Clipboard.toLowerCase()",
+    "mode": "compact",
+    "icon": "🔡",
+    "author": "Drew Wyatt",
+    "authorURL": "https://raycast.com/drewwyatt"
   },
   "dependencies": {
     "utils": "*"

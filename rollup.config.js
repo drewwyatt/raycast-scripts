@@ -18,13 +18,19 @@ const outFile = !!process.env.OUT_FILE
 
 const banner = 'raycast' in pkg ? '#!/usr/bin/env node' : undefined
 
-module.exports = {
-  input: `${Paths.packageDir(pkg.main)}`,
-  output: {
-    file: outFile,
+// module.exports = {
+//   input: `${Paths.packageDir(pkg.main)}`,
+//   output: {
+//     file: outFile,
 
-    banner,
-    format: 'cjs',
-  },
-  plugins: [commonjs(), resolve(), typescript()],
+//     banner,
+//     format: 'cjs',
+//   },
+//   plugins: [commonjs(), resolve(), typescript()],
+// }
+
+module.exports.default = (...args) => {
+  console.log('!!!rollup.config.js!!!!')
+  console.log(args)
+  return args
 }
