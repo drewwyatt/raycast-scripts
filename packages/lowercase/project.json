@@ -5,7 +5,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "project": "packages/lowercase/package.json",
-        "outputPath": "tmp/commands/lowercase",
+        "outputPath": "dist/packages/lowercase",
         "entryFile": "packages/lowercase/src/index.ts",
         "tsConfig": "tsconfig.json",
         "main": "packages/lowercase/src/index.ts"

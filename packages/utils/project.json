@@ -5,7 +5,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "project": "packages/utils/package.json",
-        "outputPath": "tmp/libs/utils",
+        "outputPath": "dist/packages/utils",
         "entryFile": "packages/utils/src/index.ts",
         "tsConfig": "tsconfig.json",
         "main": "packages/utils/src/index.ts"

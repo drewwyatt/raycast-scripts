@@ -8,7 +8,7 @@ const readFile = promisify(fs.readFile)
 
 const Paths = {
   intermediateFiles: (context: ExecutorContext, ...args: string[]) =>
-    path.join(context.root, 'tmp/commands/', ...args),
+    path.join(context.root, 'dist/packages/', ...args),
 
   commands: (context: ExecutorContext, ...args: string[]) =>
     path.join(context.root, 'commands/', ...args),
@@ -42,12 +42,22 @@ export const readScriptAndPackage = async (
   return [script, parsedJson] as CommandContents
 }
 
+const ensureDirectoryExists = (commandsDir: string) => {
+  if (!fs.existsSync(commandsDir)) {
+    fs.mkdirSync(commandsDir)
+    return
+  }
+}
+
 export const writeScript = (
   context: ExecutorContext,
   command: string,
   script: string,
   packageJson: CommandPackageJson,
 ) => {
+  const commandsDir = Paths.commands(context)
+  const filePath = Paths.commands(context, `${command}.mjs`)
+
   const prefixLines = Object.entries(packageJson.raycast).reduce<string[]>(
     (acc, [key, value]) => {
       acc.push(`// @raycase.${key}: ${value}`)
@@ -56,12 +66,11 @@ export const writeScript = (
     ['#!/usr/bin/env node'],
   )
 
-  fs.writeFileSync(
-    Paths.commands(context, `${command}.mjs`),
-    prefixLines.concat(script).join('\n'),
-    {
-      encoding: 'utf-8',
-      mode: 0x777,
-    },
-  )
+  ensureDirectoryExists(commandsDir)
+
+  fs.writeFileSync(filePath, prefixLines.concat(script).join('\n'), {
+    encoding: 'utf-8',
+  })
+
+  fs.chmodSync(filePath, '755')
 }
