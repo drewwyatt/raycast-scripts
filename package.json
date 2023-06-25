@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "nx": "nx"
+    "build-all": "nx run-many -t export"
   },
   "private": true,
   "devDependencies": {
