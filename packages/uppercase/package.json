@@ -1,0 +1,16 @@
+{
+  "name": "uppercase",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "raycast": {
+    "schemaVersion": 1,
+    "title": "Clipboard.toUpperCase()",
+    "mode": "compact",
+    "icon": "🔠",
+    "author": "Drew Wyatt",
+    "authorURL": "https://raycast.com/drewwyatt"
+  },
+  "dependencies": {
+    "utils": "*"
+  }
+}

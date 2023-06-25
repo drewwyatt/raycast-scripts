@@ -1,0 +1,22 @@
+{
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "packages/lowercase/package.json",
+        "outputPath": "dist/packages/uppercase",
+        "entryFile": "packages/uppercase/src/index.ts",
+        "tsConfig": "tsconfig.json",
+        "main": "packages/uppercase/src/index.ts"
+      }
+    },
+    "export": {
+      "executor": "raycast:export",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "uppercase"
+      }
+    }
+  }
+}
