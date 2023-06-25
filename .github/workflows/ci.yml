@@ -15,4 +15,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npp run build-all
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Export
+        run: npm run build-all
