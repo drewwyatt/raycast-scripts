@@ -1,0 +1,26 @@
+{
+  "name": "trim",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/trim/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "packages/trim/package.json",
+        "outputPath": "dist/packages/trim",
+        "entryFile": "packages/trim/src/index.ts",
+        "tsConfig": "tsconfig.json",
+        "main": "packages/trim/src/index.ts"
+      }
+    },
+    "export": {
+      "executor": "raycast:export",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "trim"
+      }
+    }
+  }
+}
