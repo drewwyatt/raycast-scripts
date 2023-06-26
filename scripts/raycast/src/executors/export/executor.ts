@@ -5,7 +5,7 @@ export type ExportExecutorOptions = {
   command: string
 }
 
-export default async function echoExecutor(
+export default async function exportExecutor(
   options: ExportExecutorOptions,
   context: ExecutorContext,
 ): Promise<{ success: boolean }> {

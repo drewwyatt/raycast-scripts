@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
   "version": 2,
-  "title": "Echo executor",
+  "title": "Export Executor",
   "description": "",
   "type": "object",
   "properties": {
