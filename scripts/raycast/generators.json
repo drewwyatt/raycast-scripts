@@ -1,0 +1,7 @@
+{
+  "command": {
+    "implementation": "./src/generators/command/generator",
+    "schema": "./src/generators/command/schema.json",
+    "description": "Generate a command package."
+  }
+}
