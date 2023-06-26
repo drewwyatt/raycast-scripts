@@ -1,7 +1,9 @@
 {
-  "command": {
-    "implementation": "./src/generators/command/generator",
-    "schema": "./src/generators/command/schema.json",
-    "description": "Generate a command package."
+  "generators": {
+    "command": {
+      "factory": "./src/generators/command/generator",
+      "schema": "./src/generators/command/schema.json",
+      "description": "command generator"
+    }
   }
 }

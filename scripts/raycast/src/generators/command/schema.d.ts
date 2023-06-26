@@ -1,1 +1,3 @@
-export interface CommandGeneratorSchema {}
+export interface CommandGeneratorSchema {
+  name: string
+}

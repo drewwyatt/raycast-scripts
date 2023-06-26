@@ -1,15 +1,17 @@
 {
-  "cli": "nx",
-  "id": "test",
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Command",
+  "title": "",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "description": "Library name",
+      "description": "",
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt": "What name would you like to use?"
     }
   },
   "required": ["name"]
